@@ -1,0 +1,6 @@
+<module>
+  <inherits name='com.extjs.gxt.samples.resources.Resources' />
+  <inherits name='com.extjs.gxt.desktop.WebDesktop' />
+  <inherits name="com.extjs.gxt.ui.GXT"/>
+  <entry-point class='com.extjs.gxt.samples.desktop.client.DesktopApp' />
+</module>
