@@ -10,6 +10,7 @@ package com.extjs.gxt.samples.desktop.client;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import com.extjs.gxt.desktop.client.Desktop;
 import com.extjs.gxt.desktop.client.Shortcut;
 import com.extjs.gxt.desktop.client.StartMenu;
@@ -104,6 +105,19 @@ public class DesktopApp implements EntryPoint {
     s2.setData("window", accordionWindow);
     s2.addSelectionListener(shortcutListener);
     desktop.addShortcut(s2);
+    
+    
+    Window createZimu = createZimu();
+    
+    Shortcut s3 = new Shortcut();
+    s3.setText("智能字幕");
+    s3.setId("acc-win-shortcut");
+    s3.setData("window",  createZimu);
+    s3.addSelectionListener(shortcutListener);
+    desktop.addShortcut(s3);
+    
+    
+   
 
     TaskBar taskBar = desktop.getTaskBar();
 
@@ -329,6 +343,18 @@ public class DesktopApp implements EntryPoint {
 
     w.add(panel);
     return w;
+  }
+  
+  private Window createZimu(){
+	  final com.extjs.gxt.ui.client.widget.Window w = new com.extjs.gxt.ui.client.widget.Window();
+	    w.setMinimizable(true);
+	    w.setMaximizable(true);
+	    w.setSize(740, 480);
+	    w.setIcon(IconHelper.createStyle("tabs"));
+	    w.setHeading("Tab Window");
+	    w.add(new com.extjs.gxt.samples.desktop.client.ui.Zimu());
+	    w.setLayout(new FitLayout());
+	    return w;
   }
 
   private Window createBogusWindow(int index) {
